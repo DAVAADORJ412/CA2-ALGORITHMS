@@ -9,5 +9,13 @@ package ca2.algorithms;
  * @author sarna
  */
 public class treenode {
+    employee data;
+    treenode left, right;
+    
+    public treenode(employee data) {
+        this.data = data;
+        this.left = null;
+        this.right = null;
+    }
     
 }
