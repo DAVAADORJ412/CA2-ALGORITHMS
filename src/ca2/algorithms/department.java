@@ -9,5 +9,19 @@ package ca2.algorithms;
  * @author sarna
  */
 public class department {
+    String name;
+    
+    public department(String name) {
+        this.name = name;
+    }
+    
+    public String getName() {
+        return name;
+    }
+    
+    @Override
+    public String toString() {
+        return name;
+    }
     
 }
