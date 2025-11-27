@@ -49,4 +49,25 @@ public class CA2ALGORITHMS {
         }   
     }
     
+    static void loadFile(String file) {
+        try {
+            Scanner sc = new Scanner(new File(file));
+            
+            sc.nextLine();
+            
+            while (sc.hasNextLine()) {
+                String[] a = sc.nextLine().split(",");
+                
+                String name = a[0] + " " + a[1];
+                String dept = a[5];
+                String type = a[6].length()>0 ? a[6] : (a[7].length()>0 ? a[7] : "staff");
+                
+                list.add(new employee(name, type , dept));              
+            }
+            System.out.println("Loaded: " + list.size());
+        } catch ( Exeption e) {
+            System.out.println("Ërror loading file.");
+        }
+    }
+    
 }
