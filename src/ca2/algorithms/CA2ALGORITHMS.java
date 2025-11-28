@@ -159,4 +159,21 @@ public class CA2ALGORITHMS {
         }
     }
       
+      static void levelOrder(){
+          Queue<treenode>q=new LinkedList<>(); q.add(root);
+          while(!q.isEmpty()){
+              treenode n=q.remove();
+              System.out.println(n.data);
+              if(n.left!=null)q.add(n.left);
+              if(n.right!=null)q.add(n.right);
+          }
+      }
+      
+      static int height(treenode n){
+          return n==null?0:1+Math.max(height(n.left),height(n.right));
+      }
+      
+      static int count(treenode n){
+          return n==null?0:1+count(n.left)+count(n.right);
+      }
 }
