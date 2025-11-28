@@ -48,7 +48,7 @@ public class CA2ALGORITHMS {
             }
         }   
     }
-    
+    // load csv
     static void loadFile(String file) {
         try {
             Scanner sc = new Scanner(new File(file));
@@ -65,13 +65,14 @@ public class CA2ALGORITHMS {
                 list.add(new employee(name, type , dept));              
             }
             System.out.println("Loaded: " + list.size());
-        } catch ( Exeption e) {
+        } catch (Exception e) {
             System.out.println("Ërror loading file.");
         }
     }
     
+    // mergesort
     static void sort() {
-        mergeSort(0, list.size(-1));
+        mergeSort(0, list.size()-1);
         System.out.println("SOrted showing first20");
         for(int i=0;i<Math.min(20,list.size());i++)
             System.out.println(list.get(i).name);
@@ -82,6 +83,21 @@ public class CA2ALGORITHMS {
         int mid=(L+R)/2;
         mergeSort(L,mid); mergeSort(mid+1,R);
         merge(L,mid,R);
+    }
+    
+    static void merge(int L,int M,int R){
+        List<employee> temp=new ArrayList<>();
+        int i=L,j=M+1;
+
+        while(i<=M && j<=R){
+            if(list.get(i).name.compareToIgnoreCase(list.get(j).name)<=0)
+                temp.add(list.get(i++));
+            else temp.add(list.get(j++));
+        }
+        while(i<=M) temp.add(list.get(i++));
+        while(j<=R) temp.add(list.get(j++));
+
+        for(int k=L;k<=R;k++) list.set(k,temp.get(k-L));
     }
     
     
