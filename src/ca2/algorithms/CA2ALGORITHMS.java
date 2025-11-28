@@ -70,4 +70,19 @@ public class CA2ALGORITHMS {
         }
     }
     
+    static void sort() {
+        mergeSort(0, list.size(-1));
+        System.out.println("SOrted showing first20");
+        for(int i=0;i<Math.min(20,list.size());i++)
+            System.out.println(list.get(i).name);
+    }
+    
+    static void mergeSort(int L,int R){
+        if(L>=R) return;
+        int mid=(L+R)/2;
+        mergeSort(L,mid); mergeSort(mid+1,R);
+        merge(L,mid,R);
+    }
+    
+    
 }
