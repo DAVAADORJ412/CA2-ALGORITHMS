@@ -100,5 +100,63 @@ public class CA2ALGORITHMS {
         for(int k=L;k<=R;k++) list.set(k,temp.get(k-L));
     }
     
+    // binary search
+    static void search(){
+        sort(); // make sure sorted
+        System.out.print("Enter name: ");
+        String t=input.nextLine();
+
+        int L=0,R=list.size()-1;
+        while(L<=R){
+            int mid=(L+R)/2;
+            int cmp=list.get(mid).name.compareToIgnoreCase(t);
+            if(cmp==0){
+                System.out.println("FOUND → "+list.get(mid));
+                return;
+            }
+            if(cmp<0) L=mid+1;
+            else R=mid-1;
+        }
+        System.out.println("Not found.");
+    }
     
+    //adding record
+    static void addRecord(){
+        System.out.print("Name: "); String name=input.nextLine();
+        System.out.print("Manager Type: "); String type=input.nextLine();
+        System.out.print("Department: "); String dept=input.nextLine();
+
+        list.add(new employee(name,type,dept));
+        System.out.println("Added.");
+    }
+    
+    // binary tree
+     static void createTree(){
+        if(list.size()<20){
+            System.out.println("Need 20 employees.");
+            return;
+        }
+
+        root=null;
+        for(int i=0;i<20;i++) insert(list.get(i));
+
+        System.out.println("\nTree Level Order:");
+        levelOrder();
+
+        System.out.println("Height = "+height(root));
+        System.out.println("Nodes = "+count(root));
+    }
+     
+      static void insert(employee e){
+        if(root==null){ root=new treenode(e); return;}
+        Queue<treenode>q=new LinkedList<>(); q.add(root);
+
+        while(!q.isEmpty()){
+            treenode n=q.remove();
+            if(n.left==null){ n.left=new treenode(e); return;}
+            if(n.right==null){ n.right=new treenode(e); return;}
+            q.add(n.left); q.add(n.right);
+        }
+    }
+      
 }
