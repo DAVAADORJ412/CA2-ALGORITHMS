@@ -16,7 +16,7 @@ public class manager {
     public manager(String name, String managerType, department department0) {
         this.name = name;
         this.managerType = managerType;
-        this.department = department;
+        this.department = department0;
     }
     
     public String getName() {
