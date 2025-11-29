@@ -2,31 +2,35 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package ca2.algorithms;
+package CA_2;
 
-/**
- *
- * @author sarna
- */
 public enum menuoption {
-    
-    SORT(1, "Sort employees list"),
-    SEARCH(2, "Search employee by name"),
-    ADD_RECORD(3, "Add new employee"),
-    CREATE_TREE(4, "Build employee hierarchy"),
-    EXIT(5, "Exit program");
+    SORT(1, "Sort Employees"),
+    SEARCH(2, "Search Employee"),
+    ADD_RECORD(3, "Add Record"),
+    CREATE_TREE(4, "Create Binary Tree (20 employees)"),
+    EXIT(5, "Exit");
 
-    public final int code;
-    public final String text;
-    
+    private final int code;
+    private final String text;
+
     menuoption(int code, String text) {
         this.code = code;
         this.text = text;
-}
+    }
+
+    public int getCode() {
+        return code;
+    }
+
+    public String getText() {
+        return text;
+    }
+
     public static menuoption fromCode(int code) {
         for (menuoption m : values()) {
             if (m.code == code) {
-                
+                return m;
             }
         }
         return null;
