@@ -1,5 +1,0 @@
-First name,Last name,Gender,Email,Salary,Department,Position,Job title,Company
-Kate,Summer,Female,ksummer@TechInnovators.com,20000.00,IT Development,senior,QA,TechInnovators
-Ken,Winter,Male,kwinter@TechInnovators.com,15000.00,IT Development,middle,backend,TechInnovators
-...
-Amelia,King,Female,aking@TechWorks.com,5200.60,Marketing,middle,Marketing Specialist,TechWorks
