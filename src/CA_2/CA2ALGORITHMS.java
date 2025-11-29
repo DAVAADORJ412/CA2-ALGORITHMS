@@ -15,7 +15,7 @@ public class CA2ALGORITHMS {
 
     public static void main(String[] args) {
 
-        // Ask (for assignment requirement), but ignore the answer
+        // Ask 
         System.out.print("Enter CSV filename: ");
         input.nextLine(); // read and ignore
         loadFile();       // always load employees.txt from project folder
@@ -49,7 +49,7 @@ public class CA2ALGORITHMS {
         }
     }
 
-    // ---- SAFE integer input (stops NumberFormatException) ----
+    // SAFE integer input 
     private static int readInt(String message) {
         while (true) {
             System.out.print(message);
@@ -66,7 +66,7 @@ public class CA2ALGORITHMS {
         }
     }
 
-    // ---- LOAD CSV (always employees.txt in project root) ----
+    // LOAD CSV (always employees .txt in project root)
     static void loadFile() {
         try {
             String projectDir = System.getProperty("user.dir");
@@ -104,7 +104,7 @@ public class CA2ALGORITHMS {
         }
     }
 
-    // ---- MERGE SORT ----
+    // MERGE SORT 
     static void sort() {
         if (list.isEmpty()) {
             System.out.println("No employees to sort.");
@@ -141,7 +141,7 @@ public class CA2ALGORITHMS {
         for (int k = L; k <= R; k++) list.set(k, temp.get(k - L));
     }
 
-    // ---- BINARY SEARCH ----
+    // BINARY SEARCH 
     static void search() {
         if (list.isEmpty()) {
             System.out.println("No employees loaded.");
@@ -166,7 +166,7 @@ public class CA2ALGORITHMS {
         System.out.println("Not found.");
     }
 
-    // ---- ADD RECORD ----
+    // ADD RECORD
     static void addRecord() {
         System.out.print("Name: ");
         String name = input.nextLine();
@@ -179,7 +179,7 @@ public class CA2ALGORITHMS {
         System.out.println("Added.");
     }
 
-    // ---- BINARY TREE ----
+    //BINARY TREE
     static void createTree() {
         if (list.size() < 20) {
             System.out.println("Need at least 20 employees.");
